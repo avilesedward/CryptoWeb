@@ -1,0 +1,41 @@
+
+      <div class="Currency_detail">
+        @if(newCurrency){
+          <div>Identificador:</div><div>{{newCurrency.id}}</div>
+          <div>Nemotecnico:</div><div>{{newCurrency.symbol}}</div>
+          <div>Nombre:</div><div>{{newCurrency.nameid}}</div>
+          <div>Nombre completo:</div><div>{{newCurrency.name}}</div>
+          <div>
+            Precio en USD:</div><div>{{newCurrency.price_usd}}
+              @if(newCurrency.percent_change_24h.startsWith('-')){
+                <span>
+                  <img src="./assets/img/trending-down.svg"/>
+                </span>
+              }
+              @else {
+                <span>
+                  <img src="./assets/img/trending-up.svg"/>
+                </span>
+              }
+          </div>
+          <div>Suministro circulante:</div><div>{{newCurrency.csupply}}</div>
+          <div>Oferta total:</div><div>{{newCurrency.tsupply}}</div>
+          <div>Suministro m&aacute;ximo:</div><div>{{newCurrency.msupply}}</div>
+          <div>Variaci&oacute;n 24 horas:</div><div>{{newCurrency.percent_change_24h}}</div>
+          <div>Variaci&oacute;n 1 hora:</div><div>{{newCurrency.percent_change_1h}}</div>
+          <div>Variaci&oacute;n 7 d&iacute;as:</div><div>{{newCurrency.percent_change_7d}}</div>
+          <div>Ranking capitalizaci&oacute;n:</div><div>{{newCurrency.rank}}</div>
+          <div>Valor en BTC:</div><div>{{newCurrency.price_btc}}</div>
+          <div>Capitalizaci&oacute;n en USD:</div><div>{{newCurrency.market_cap_usd}}</div>
+          <div>Volumen 24 horas:</div><div>{{newCurrency.volume24a}}</div>
+          <div>Volumen 24 horas en USD:</div><div>{{newCurrency.volume24}}</div>
+        }
+      </div>
+      <div class="Currencies_control">
+        <p>
+          <button (click)="returnCurrencies();">&lt;&lt; Volver</button>
+      </div>
+      <div class="Currencies_date">
+        <p><strong>Actualizado: </strong>{{changedDate}}</p>
+      </div>
+

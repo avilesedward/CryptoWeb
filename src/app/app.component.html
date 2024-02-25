@@ -1,0 +1,34 @@
+<app-header></app-header>
+
+<main class="Main">
+  <section class="Main_container">
+    <picture class="Main_image">
+      <img src="./assets/img/Bitcoin.svg"/>
+    </picture>
+    <div class="Main_description">
+      <h2>Visibilizamos todas las tasas de cambio.</h2>
+      <p>
+        Traemos información en tiempo real de las casas de cambio y las
+        monedas más importantes del mundo.
+      </p>
+    </div>
+    <section class="Currencies_container">
+      <h3 class="Currencies_title">Monedas</h3>
+    @if(currencySel && currencySel.id !='' ){
+      <app-currency 
+      [currency]="currencySel"
+      (currencySelEvent)="getCurrencySelect($event)" ></app-currency>
+    }
+    @else{
+      <app-currencies  
+        (currencySelEvent)="getCurrencySelect($event)" 
+        (startEvent)="setStart($event)" 
+        [start]="start"
+        [currencies]="currencies"
+        ></app-currencies>
+    }
+  </section>
+  </section>
+</main>
+
+<app-footer></app-footer>
